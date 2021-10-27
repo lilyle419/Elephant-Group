@@ -24,3 +24,4 @@ def dog_years (dog_calendar):
 
 if __name__ == "__main__":
     print(dog_years(4))
+    print(dog_years(5))
