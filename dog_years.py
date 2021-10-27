@@ -1,7 +1,7 @@
 # this function determines the calendar of a dogs life compared to a human's life
 
 def dog_years (dog_calendar):
-    """"compute the human age of dog years
+    """"calculates the human age of dog years
     
     Args:
         dog_calendar (int): age of dog in calendar years
