@@ -29,7 +29,7 @@ class Catalog():
 
 
     def add_user(self, user):
-        """ 
+        """ adds a user to the database
         
         Args:
             user (user class): an instance of the user class
