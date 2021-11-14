@@ -4,8 +4,6 @@ import uuid
 from argparse import ArgumentParser
 import sys
 
-#_____________________testing stuff underhere_______________
-
 
 def test_stuff():
 
@@ -25,21 +23,10 @@ def test_stuff():
     print(f"password is:{password}, salt2 is:{salt2}")
     print(f"hashed it is:{hashed_pass2}")
 
-def check_password():
-
-    return
-
-
-
-
-#_______________
-
 
 def main():
     test_stuff()
    
    
-
-
 if __name__ == "__main__":
     main()
