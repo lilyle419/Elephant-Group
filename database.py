@@ -34,7 +34,11 @@ class Catalog():
 
 
     def add_user(self, user):
+<<<<<<< HEAD
         """ adds a user to the catalog
+=======
+        """ adds a user to the database
+>>>>>>> d6586b2b815ea8b122132e2c0786d58e55e8e1c9
         
         Args:
             user (user class): an instance of the user class
@@ -42,6 +46,7 @@ class Catalog():
         """
 
         return
+<<<<<<< HEAD
 
 
 #_____________________testing stuff underhere_______________
@@ -74,3 +79,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+=======
+>>>>>>> d6586b2b815ea8b122132e2c0786d58e55e8e1c9
