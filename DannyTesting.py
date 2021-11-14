@@ -1,8 +1,5 @@
 import hashlib
-import base64
 import uuid
-from argparse import ArgumentParser
-import sys
 
 
 def test_stuff():
