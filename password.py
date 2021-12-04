@@ -3,7 +3,7 @@ import random
 import string
 sym = "!@$%^&*()-+]#"
 letters = string.ascii_letters
-numbers =string.digits
+numbers = string.digits
 # define functions
 def lettersgen():
     lettersList = []
