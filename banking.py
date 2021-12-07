@@ -43,6 +43,7 @@ class Login():
         """
         
         good_login = False
+        login_attempts = 0
         
         while (good_login is False):
             
@@ -58,8 +59,13 @@ class Login():
                     #some code to allow them to access their specific account would come after"
                 else:
                     print ("Incorrect username or password please try again")
+                    login_attempts += 1
             else:
                 print ("Incorrect username or password please try again")
+                login_attempts += 1
+            if login_attempts >= 3:
+                print ("Too many failed attempts. Try again later.")
+                break
 
 
 def main(filepath):
