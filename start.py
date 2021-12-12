@@ -1,6 +1,6 @@
 import time
 from os import system, name
-import acctcreation
+from acctcreation import acctcreation
 # import password
 
 def clear():
@@ -18,12 +18,12 @@ def main():
   #  time.sleep(1)
   #  clear()
   #  TODO insert importing data from csv file
-    accounts = acctcreation.Createacct("startinguserdata.csv")
-    gui()
+    accounts = acctcreation.create_acct("startinguserdata.csv")
+    gui(accounts)
     
 
 
-def gui():
+def gui(database):
     print("welcome! What would you like to do:")
     a = True
     while(a):
@@ -36,8 +36,7 @@ def gui():
         
         if(selection == "1"):
             a = False
-            print("Enter Username")
-            #TODO call log in function
+            database.create_acc()
     
         elif(selection == "2"):
             a = False

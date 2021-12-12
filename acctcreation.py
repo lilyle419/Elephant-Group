@@ -4,7 +4,7 @@ import password
 
 
 
-class Createacct():
+class acctcreation():
     """Class where users are prompted for a login to acceess their bank account
 
         Attributes:
@@ -23,16 +23,14 @@ class Createacct():
         Side effects:
             populates dictionary
 
-
         """
         self.userinfo = {}
-        
+        print("acctcreation line 28")
         
         with open(filepath, 'r', encoding = "utf-8") as new_file:
             for line in new_file:
                 user = line.strip().split(",")
                 self.userinfo[user[0]] = (user[1], float(user[2])) #key:username  tuple: password, money in account
-    
     
     
     def create_acct(self):
