@@ -1,8 +1,6 @@
 import sys
 from argparse import ArgumentParser
-import password
-
-
+#import password
 
 class acctcreation():
     """Class where users are prompted for a login to acceess their bank account
@@ -25,7 +23,6 @@ class acctcreation():
 
         """
         self.userinfo = {}
-        print("acctcreation line 28")
         
         with open(filepath, 'r', encoding = "utf-8") as new_file:
             for line in new_file:
@@ -43,31 +40,32 @@ class acctcreation():
         created_account = False
         while (created_account is False):
             username = input("Enter your desired username:")
-            pass1 = input("Enter your desired password:")
+            pass1 = input("Enter your desired password\nPassword must have a special character, a number, and a capital number:")
             pass2 = input("Confirm your desired password:")
             if pass1 == pass2:
                 password = pass1
                 print("Checking password security")
                 
                 if self.check_password(password) == True:
-                    print("Password secure")
+                    created_account = True
+                    print("Password secure!")
 
                     deposit = input("Please deposit any initial funds or put 0 if you so choose:")
 
                     #salt and hash password here and then store it to the database with the funds
                 
                 else:
-                    print("Password not secure generating secure password")
-                    
-
-
-
-                
+                    print("Password not secure, generating secure password")
+                    # TODO do we need to rename password.py? 
+ 
             
             else:
                 print("Passwords do not match. Please try again")
+        
 
-    def check_password(password):
+        print("exiting account creation, line 66")
+
+    def check_password(self, password):
         password_good = False
         has_char = False
         has_num = False
@@ -77,15 +75,15 @@ class acctcreation():
         capital_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
         
         for char in char_list:
-            if password.contains(char):
+            if char in password:
                 has_char = True
         
         for number in num_list:
-            if password.contains(char):
+            if number in password:
                 has_num = True
         
         for letter in capital_list:
-            if password.contains(char):
+            if letter in password:
                 has_capital = True
         
         if ((has_char == True) & (has_num == True) & (has_capital == True)):

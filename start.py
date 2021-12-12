@@ -18,7 +18,7 @@ def main():
   #  time.sleep(1)
   #  clear()
   #  TODO insert importing data from csv file
-    accounts = acctcreation.create_acct("startinguserdata.csv")
+    accounts = acctcreation("startinguserdata.csv")
     gui(accounts)
     
 
@@ -36,12 +36,12 @@ def gui(database):
         
         if(selection == "1"):
             a = False
-            database.create_acc()
+            database.create_acct()
     
         elif(selection == "2"):
             a = False
             #TODO call make new user function
-            print("Pick a username")
+            print("Making a new account...")
         else:
             print("Input not recognized, try again.")
             
