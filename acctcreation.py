@@ -90,10 +90,14 @@ class acctcreation():
             password_good = True
 
         return password_good
-        
 
 
+    #TODO
+    def add_money(self,user, money):    
+        print("adding money")
 
+    def take_money(self,user, money):
+        print("subtracting money")
 
 
 
