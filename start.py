@@ -36,12 +36,13 @@ def gui(database):
         
         if(selection == "1"):
             a = False
-            database.create_acct()
+            print("TODO line 39")
+            #TODO make login stuff
     
         elif(selection == "2"):
             a = False
-            #TODO call make new user function
             print("Making a new account...")
+            database.create_acct()
         else:
             print("Input not recognized, try again.")
             
