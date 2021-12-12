@@ -61,12 +61,15 @@ class acctcreation():
 
                     deposit = input("Please deposit any initial funds or put 0 if you so choose:")
 
-                    # TODO salt and hash password here and then store it to the database with the funds
+                    #salt and hash password here and then store it to the database with the funds
+                    salt = uuid.uuid4().hex
+                    hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+                    self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
 
                 
                 else:
                     print("Password not secure, generating secure password")
-                    # TODO do we need to rename password.py? 
+                    # TODO insert password.py related code here
  
             
             else:

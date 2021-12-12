@@ -38,6 +38,7 @@ def gui(database):
             a = False
             print("TODO line 39")
             #TODO make login stuff
+            #create code for looking at user's current balance
     
         elif(selection == "2"):
             a = False
