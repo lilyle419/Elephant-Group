@@ -102,8 +102,7 @@ class Createacct():
 
 
 
-               
-
+"""      
 def main(filepath):
    start = Login(filepath)
    start.login_attempt()
@@ -111,3 +110,5 @@ def main(filepath):
 
 if __name__ == "__main__":
     main("startinguserdata.csv")
+
+"""

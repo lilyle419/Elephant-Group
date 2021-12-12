@@ -55,5 +55,5 @@ def Password():
         finalpass = ''.join(str(char)for char in password)
         print(finalpass)
         
-Password()
+#Password()
 

@@ -1,6 +1,7 @@
 import time
 from os import system, name
-
+import acctcreation
+# import password
 
 def clear():
     # for windows
@@ -16,7 +17,8 @@ def main():
     print("starting up...")
   #  time.sleep(1)
   #  clear()
-    #TODO insert importing data from csv file
+  #  TODO insert importing data from csv file
+    accounts = acctcreation.Createacct("startinguserdata.csv")
     gui()
     
 
