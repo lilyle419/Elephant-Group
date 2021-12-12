@@ -32,10 +32,10 @@ class acctcreation():
                 user = line.strip().split(",")
 
                 #salt and hash password here
-                salt = uuid.uuid4().hex
-                hashedpass = hashlib.sha256(user[1].encode('utf-8') + salt.encode('utf-8')).hexdigest()
+                #salt = uuid.uuid4().hex
+                #hashedpass = hashlib.sha256(user[1].encode('utf-8') + salt.encode('utf-8')).hexdigest()
 
-                self.userinfo[user[0]] = (salt, hashedpass, float(user[2])) #key:username  tuple: salt, hashedpass, money
+                self.userinfo[user[0]] = (user[1], user[2], float(user[3])) #key:username  tuple: salt, hashedpass, money
 
     
     
@@ -60,10 +60,12 @@ class acctcreation():
                     print("Password secure!")
 
                     deposit = input("Please deposit any initial funds or put 0 if you so choose:")
+                    # TODO check if input is number 
 
                     #salt and hash password here and then store it to the database with the funds
                     salt = uuid.uuid4().hex
                     hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+
                     self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
 
                 
@@ -76,7 +78,7 @@ class acctcreation():
                 print("Passwords do not match. Please try again")
         
 
-        print("exiting account creation, line 66")
+        print("exiting account creation, line 80")
 
     def check_password(self, password):
         password_good = False

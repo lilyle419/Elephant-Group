@@ -18,7 +18,7 @@ def main():
   #  time.sleep(1)
   #  clear()
   #  TODO insert importing data from csv file
-    accounts = acctcreation("startinguserdata.csv")
+    accounts = acctcreation("bankdatabase.csv")
     gui(accounts)
     
 
