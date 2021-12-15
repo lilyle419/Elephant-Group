@@ -113,32 +113,88 @@ class acctcreation():
         return password_good
 
 
-    #TODO
+    #TODO check this 
     def add_money(self, user, money):    
         print("adding money")
+        x = list(self.userinfo[user])
+        x[2] = x[2] + money
+        y = tuple(x)
+        self.userinfo[user] = x
 
     def take_money(self, user, money):
         print("subtracting money")
+        x = list(self.userinfo[user])
+        print("Check if sufficient funds, line 127")
+        x[2] = x[2] - money
+        y = tuple(x)
+        self.userinfo[user] = x
 
-    def get_balance(self, name):
+
+    #prob not needed
+    def get_balance(self, user):
         """ returns the user's balance
         
         Args:
-            name: the user's username
+            user: the user's username
         """
-        return 0
+        x = list(self.userinfo[user])
+        return x[2]
 
 
     def add_user(self, user, password, money):
         """ adds a user to the catalog
         
         Args:
-            user (user class): an instance of the user class
-
+            user (string): an instance of the user class
+            password (string): the user's inputted password
+            money (float): money account starts with
         """
 
+        salt = uuid.uuid4().hex
+        hashedpass = hashlib.sha256(user[1].encode('utf-8') + salt.encode('utf-8')).hexdigest()
+
+        x = (salt, hashedpass, money)
+        self.userinfo[user] = x
         return
 
+    # TODO add loop
+    def login(self):
+        """ Prompts user for login info
+
+        Returns (String): username if successful, empty string otherwise
+        """
+
+        username = input("username: ")
+        if username in self.userinfo:
+            password = input("password: ")
+            salt = self.userinfo[username][0]
+            hashedinput = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+            if(hashedinput == self.userinfo[username][1]):
+                print("Success! Logging you in.")
+                return username
+            else:
+                print("Password incorrect")
+                
+
+
+        else:
+            print("User does not exist")
+
+
+        return ""
+        
+        
+
+        #clear() need to get function lol
+
+
+
+
+
+
+    def export(self):
+        print("this function will export out current dictionary to bankdatabase.csv")
+        print("work in progress")
 
 # password
 
@@ -182,8 +238,6 @@ def Password():
         random.shuffle(password)
         finalpass = ''.join(str(char)for char in password)
         print(finalpass)
-
-
 
 
 """      
