@@ -76,14 +76,15 @@ class acctcreation():
                 
                 else:
                     print("Password not secure, generating secure password")
-                    # TODO insert password.py related code here
+                    # TODO integrate password.py related code here
+                    Password()
  
             
             else:
                 print("Passwords do not match. Please try again")
         
 
-        print("exiting account creation, line 80")
+        print("exiting account creation, line 87")
 
     def check_password(self, password):
         password_good = False
@@ -113,10 +114,10 @@ class acctcreation():
 
 
     #TODO
-    def add_money(self,user, money):    
+    def add_money(self, user, money):    
         print("adding money")
 
-    def take_money(self,user, money):
+    def take_money(self, user, money):
         print("subtracting money")
 
     def get_balance(self, name):
@@ -128,7 +129,7 @@ class acctcreation():
         return 0
 
 
-    def add_user(self, user):
+    def add_user(self, user, password, money):
         """ adds a user to the catalog
         
         Args:
