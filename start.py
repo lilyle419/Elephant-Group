@@ -39,6 +39,7 @@ def gui(database):
             print("TODO line 39")
             #TODO make login stuff
             #create code for looking at user's current balance
+            #create code for exiting, this includes saving current stuff to file
     
         elif(selection == "2"):
             a = False
