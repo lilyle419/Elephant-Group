@@ -4,6 +4,7 @@ import string
 sym = "!@$%^&*()-+]#"
 letters = string.ascii_letters
 numbers = string.digits
+
 # define functions
 def lettersgen():
     lettersList = []
@@ -56,4 +57,3 @@ def Password():
         print(finalpass)
         
 #Password()
-
