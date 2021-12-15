@@ -62,12 +62,13 @@ def gui(database):
 
     print("ending. delete this line 59")
 
-
+#TODO finish this
 def logged_in(database, user):
     #clear()
     print(f"Welcome {user}!")
     print("1. Deposite money")
     print("2. Withdraw money")
+   
 
 
 
