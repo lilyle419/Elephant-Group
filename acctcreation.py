@@ -139,48 +139,6 @@ class acctcreation():
         return
 
 
-# password
-
-def lettersgen():
-    lettersList = []
-    userLetters = int(input("How many letters?"))
-    for i in range(userLetters):
-        letPW = random.choice(letters)
-        lettersList.append(letPW)
-    return lettersList
-
-def numbersgen():
-    numList = []
-    userNum = int(input("How many numbers?"))
-    for i in range(userNum):
-        numPW = random.choice(numbers)
-        numList.append(numPW)
-    return numList
-
-def symGen():
-    symList = []
-    userSym = int(input("How many special characters?"))
-    for i in range(userSym):
-        symPW = random.choice(sym)
-        symList.append(symPW)
-    return symList
-
-def Password():
-    userInput = ""
-    while userInput != "done":
-        userInput = input("Welcome! Create password (yes or done):")
-        if userInput == "done":
-            break
-        lettersPass= lettersgen()
-        numPass = numbersgen()
-        symPass = symGen()
-        password = []
-        password.extend(lettersPass)
-        password.extend(numPass)
-        password.extend(symPass)
-        random.shuffle(password)
-        finalpass = ''.join(str(char)for char in password)
-        print(finalpass)
 
 
 
