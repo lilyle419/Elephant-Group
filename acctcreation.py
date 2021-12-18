@@ -76,7 +76,9 @@ class acctcreation():
                 
                 else:
                     print("Password not secure, generating secure password")
-                    # TODO integrate password.py related code here
+                    # integrate password.py related code here
+                    salt = uuid.uuid4().hex
+                    hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
                     Password()
  
             
