@@ -5,7 +5,6 @@ import base64
 import uuid
 import string
 import random
-import csv
 
 sym = "!@$%^&*()-+]#"
 letters = string.ascii_letters
@@ -231,14 +230,14 @@ class acctcreation():
         print("this function will export out current dictionary to bankdatabase.csv")
 
         f = open("bankdatabase.csv", 'w')
-        writer = csv.writer(f)
+
         for key in self.userinfo.keys():
             a = self.userinfo[key]
-            line = f"{a},{a[0]},{a[1]},{a[2]}"
-            print(f"writing {line}")
-            writer.writerow(line)
+            line = f"{key},{a[0]},{a[1]},{a[2]}\n"
+            f.write(line)
         
-        print("export finished")
+        f.close()
+        print("export finished!")
 
 
 # password
