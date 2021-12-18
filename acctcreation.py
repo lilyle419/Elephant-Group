@@ -267,19 +267,25 @@ def symGen():
     return symList
 
 def Password():
+    """Generates a password using helper functions
+
+        Returns:
+            finalpass(string): The generated password
+
+"""
     
-        print("Welcome! Creating generated password:")
-        lettersPass= lettersgen()
-        numPass = numbersgen()
-        symPass = symGen()
-        password = []
-        password.extend(lettersPass)
-        password.extend(numPass)
-        password.extend(symPass)
-        random.shuffle(password)
-        finalpass = ''.join(str(char)for char in password)
-        print(finalpass)
-        return finalpass
+    print("Welcome! Creating generated password:")
+    lettersPass= lettersgen()
+    numPass = numbersgen()
+    symPass = symGen()
+    password = []
+    password.extend(lettersPass)
+    password.extend(numPass)
+    password.extend(symPass)
+    random.shuffle(password)
+    finalpass = ''.join(str(char)for char in password)
+    print(finalpass)
+    return finalpass
 
 
 
