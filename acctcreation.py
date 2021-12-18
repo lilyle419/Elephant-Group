@@ -54,7 +54,7 @@ class acctcreation():
         created_account = False
         while (created_account is False):
             username = input("Enter your desired username:")
-            pass1 = input("Enter your desired password\nPassword must have a special character, a number, and a capital number:\n")
+            pass1 = input("Enter your desired password:\nPassword must have a special character, a number, and a capital number:\n")
             pass2 = input("Confirm your desired password:")
             if pass1 == pass2:
                 password = pass1
@@ -163,22 +163,35 @@ class acctcreation():
 
         Returns (String): username if successful, empty string otherwise
         """
+        good_login = False
+        login_attempts = 0
+        
+        while (good_login is False):
 
-        username = input("username: ")
-        if username in self.userinfo:
-            password = input("password: ")
-            salt = self.userinfo[username][0]
-            hashedinput = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
-            if(hashedinput == self.userinfo[username][1]):
-                print("Success! Logging you in.")
-                return username
+            username = input("Enter your username:")
+            if username in self.userinfo:
+
+                password = input("Enter your password:")
+
+                salt = self.userinfo[username][0]
+
+                hashedinput = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+
+                if(hashedinput == self.userinfo[username][1]):
+
+                    print("Success! Logging you in.")
+                    return username
+
+                else:
+                    print ("Incorrect username or password please try again.")
+                    login_attempts += 1
+                
             else:
-                print("Password incorrect")
-
-
-
-        else:
-            print("User does not exist")
+                print ("Incorrect username or password please try again.")
+                login_attempts += 1
+            if login_attempts >= 3:
+                print ("Too many failed attempts. Try again later.")
+                return ""
 
 
         return ""
@@ -240,13 +253,4 @@ def Password():
         print(finalpass)
 
 
-"""      
-def main(filepath):
-   start = Login(filepath)
-   start.login_attempt()
 
-
-if __name__ == "__main__":
-    main("startinguserdata.csv")
-
-"""
