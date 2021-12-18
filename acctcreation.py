@@ -108,6 +108,13 @@ class acctcreation():
         print("exiting account creation, line 87")
 
     def check_password(self, password):
+        """Checks users password for necessary requirments
+
+        Args:
+            password(string): users desired password
+        Returns:
+            password_good(Boolean): True if password meets requirements
+        """   
         password_good = False
         has_char = False
         has_num = False
