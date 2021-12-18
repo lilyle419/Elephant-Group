@@ -178,7 +178,6 @@ class acctcreation():
         self.userinfo[user] = x
         return
 
-    # TODO add loop
     def login(self):
         """ Prompts user for login info
 

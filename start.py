@@ -16,7 +16,7 @@ def main():
     print("starting up...")
   #  time.sleep(1)
   #  clear()
-  #  TODO insert importing data from csv file
+
     accounts = acctcreation("bankdatabase.csv")
     gui(accounts)
     
@@ -38,8 +38,6 @@ def gui(database):
             a = False
             print("TODO line 39")
             #TODO make login stuff
-            #create code for looking at user's current balance
-            #create code for exiting, this includes saving current stuff to file
             user = database.login()
             if not user:
                 a = True
