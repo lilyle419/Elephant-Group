@@ -135,7 +135,15 @@ class acctcreation():
 
 
     #TODO check this 
-    def add_money(self, user, money):    
+    def add_money(self, user, money): 
+        """Withdraws money from users acocount
+
+        Args:
+            user(string): The user
+            money(int): The amount they want to withdraw
+        Side Effects: 
+            Updates users money
+        """   
         print("adding money")
         x = list(self.userinfo[user])
         x[2] = x[2] + money
@@ -143,6 +151,17 @@ class acctcreation():
         self.userinfo[user] = x
 
     def take_money(self, user, money):
+        """Withdraws money from users acocount
+
+        Args:
+            user(string): The user
+            money(int): The amount they want to withdraw
+        Side Effects: 
+            Updates users money
+
+
+
+"""
         print("subtracting money")
         x = list(self.userinfo[user])
         print("Check if sufficient funds, line 127")
@@ -226,6 +245,12 @@ class acctcreation():
 
 
     def export(self):
+        """Exports dictionary of updated info to the database
+
+        Side Effects:
+            updates database
+
+"""
         print("this function will export out current dictionary to bankdatabase.csv")
 
         f = open("bankdatabase.csv", 'w')
@@ -242,6 +267,12 @@ class acctcreation():
 # password
 
 def lettersgen():
+    """Helper function for adding character
+
+        Returns:
+            letterlist(string): adds leters
+
+"""
     lettersList = []
     userLetters = int(input("How many letters?"))
     for i in range(userLetters):
@@ -250,6 +281,12 @@ def lettersgen():
     return lettersList
 
 def numbersgen():
+    """Helper function for adding character
+
+        Returns:
+            numlist(string): adds numbers
+
+"""
     numList = []
     userNum = int(input("How many numbers?"))
     for i in range(userNum):
@@ -258,6 +295,12 @@ def numbersgen():
     return numList
 
 def symGen():
+    """Helper function for adding character
+
+        Returns:
+            symlist(string): adds characters
+
+"""
     symList = []
     userSym = int(input("How many special characters?"))
     for i in range(userSym):
