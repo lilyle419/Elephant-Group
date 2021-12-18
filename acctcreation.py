@@ -56,31 +56,50 @@ class acctcreation():
         while (created_account is False):
             username = input("Enter your desired username:")
             pass1 = input("Enter your desired password:\nPassword must have a special character, a number, and a capital number:\n")
-            pass2 = input("Confirm your desired password:")
-            if pass1 == pass2:
-                password = pass1
-                print("Checking password security")
-                
-                if self.check_password(password) == True:
-                    created_account = True
-                    print("Password secure!")
+            
+            if self.check_password(pass1) == True:
 
-                    deposit = input("Please deposit any initial funds or put 0 if you so choose:")
+
+                pass2 = input("Confirm your desired password:")
+                if pass1 == pass2:
+                    password = pass1
+                    print("Checking password security")
+                
+                    if self.check_password(password) == True:
+                        created_account = True
+                        print("Password secure!")
+
+                        deposit = input("Please deposit any initial funds or put 0 if you so choose:")
                     # TODO check if input is number 
 
                     #salt and hash password here and then store it to the database with the funds
-                    salt = uuid.uuid4().hex
-                    hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+                        salt = uuid.uuid4().hex
+                        hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
 
-                    self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
+                        self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
+            
+            
 
                 
                 else:
                     print("Password not secure, generating secure password")
                     # integrate password.py related code here
+                    password = Password()
                     salt = uuid.uuid4().hex
                     hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
-                    Password()
+                    deposit = input("Please deposit any initial funds or put 0 if you so choose:")
+                    self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
+                    created_account = True
+                    
+                    
+            elif self.check_password(pass1) == False:
+                print("Intital password insufficent, activating password generator")
+                password = Password()
+                salt = uuid.uuid4().hex
+                hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+                deposit = input("Please deposit any initial funds or put 0 if you so choose:")
+                self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
+                created_account = True
  
             
             else:
@@ -249,11 +268,8 @@ def symGen():
     return symList
 
 def Password():
-    userInput = ""
-    while userInput != "done":
-        userInput = input("Welcome! Create password (yes or done):")
-        if userInput == "done":
-            break
+    
+        print("Welcome! Creating generated password:")
         lettersPass= lettersgen()
         numPass = numbersgen()
         symPass = symGen()
@@ -264,6 +280,7 @@ def Password():
         random.shuffle(password)
         finalpass = ''.join(str(char)for char in password)
         print(finalpass)
+        return finalpass
 
 
 

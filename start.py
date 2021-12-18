@@ -47,7 +47,6 @@ def gui(database):
                 logged_in(database, user)
     
         elif(selection == "2"):
-            a = False
             print("Making a new account...")
             database.create_acct()
         elif(selection == "3"):
