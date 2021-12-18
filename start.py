@@ -65,6 +65,18 @@ def logged_in(database, user):
     print(f"Welcome {user}!")
     print("1. Deposite money")
     print("2. Withdraw money")
+    valid = False
+    selection = input("")
+    while valid == False:
+        if selection == 1:
+            valid = True
+            database.add_money(user)
+        elif selection == 2:
+            valid = True
+            database.take_money(user)
+        else:
+            print("Select a valid response")
+
    
 
 
