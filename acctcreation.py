@@ -78,6 +78,7 @@ class acctcreation():
                     print("Password not secure, generating secure password")
                     # TODO integrate password.py related code here
                     Password()
+                    created_account = True
  
             
             else:
