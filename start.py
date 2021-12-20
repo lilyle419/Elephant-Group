@@ -70,6 +70,7 @@ def logged_in(database, user):
         if selection == "1":
             clear()
             valid = True
+            print(f"You currently have ${database.get_balance(user)}")
             money = input("How much are you depositing: $")
             money = int(money)
 
@@ -82,6 +83,7 @@ def logged_in(database, user):
         elif selection == "2":
             clear()
             valid = True
+            print(f"You currently have ${database.get_balance(user)}")
             money = input("How much are you withdrawing: $")
             money = int(money)
             database.take_money(user, money)
