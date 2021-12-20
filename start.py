@@ -3,6 +3,12 @@ from os import system, name
 from acctcreation import acctcreation
 
 def clear():
+    """clears user's terminal
+    https://stackoverflow.com/questions/54943464/how-to-clear-a-screen-in-python/54943542#54943542
+    techdoodle
+
+    The clear function was used here to have our output look cleaner
+    """
     # for windows
     if name == 'nt':
         _ = system('cls')
@@ -23,6 +29,13 @@ def main():
 
 
 def gui(database):
+    """The main text based user interface
+
+    Args:
+        database (acctcreation): the current bank database.
+    
+    """
+
     print("Welcome! What would you like to do:")
     a = True
     while(a):
@@ -60,6 +73,14 @@ def gui(database):
 
 
 def logged_in(database, user):
+    """ The text based user interface for when the user is logged in
+
+    Args:
+        database (acctcreation): the current bank database.
+        user(String): the user's username
+    
+    
+    """
     clear()
     print(f"Welcome {user}!")
     print("1. Deposite money")
