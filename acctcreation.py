@@ -1,7 +1,4 @@
-import sys
-from argparse import ArgumentParser
 import hashlib
-import base64
 import uuid
 import string
 import random
@@ -15,9 +12,7 @@ class acctcreation():
 
         Attributes:
             userinfo: a dictionary of users information
-    
     """
-    
     
     def __init__(self, filepath):
         """Opens file and populates dictionary
@@ -139,8 +134,6 @@ class acctcreation():
 
         return password_good
 
-
-    #TODO check this 
     def add_money(self, user, money): 
         """Withdraws money from users acocount
 
@@ -175,7 +168,6 @@ class acctcreation():
         self.userinfo[user] = x
 
 
-    #prob not needed
     def get_balance(self, user):
         """ returns the user's balance
         
@@ -239,11 +231,6 @@ class acctcreation():
 
 
         return ""
-        
-        
-
-        #clear() need to get function lol
-
 
 
     def export(self):
@@ -251,8 +238,7 @@ class acctcreation():
 
         Side Effects:
             updates database
-
-"""
+        """
         print("this function will export out current dictionary to bankdatabase.csv")
 
         f = open("bankdatabase.csv", 'w')
@@ -330,6 +316,4 @@ def Password():
     finalpass = ''.join(str(char)for char in password)
     print(finalpass)
     return finalpass
-
-
 
