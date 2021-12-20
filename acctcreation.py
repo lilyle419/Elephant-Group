@@ -71,9 +71,6 @@ class acctcreation():
                         hashedpass = hashlib.sha256(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
 
                         self.userinfo[username] = (salt, hashedpass, float(deposit)) #key:username  tuple: salt, hashedpass, money
-            
-            
-
                 
                 else:
                     print("Password not secure, generating secure password")
@@ -156,7 +153,7 @@ class acctcreation():
             money(int): The amount they want to withdraw
         Side Effects: 
             Updates users money
-`       """
+       """
 
         x = list(self.userinfo[user])
         if(x[2]< money):
