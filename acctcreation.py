@@ -105,7 +105,6 @@ class acctcreation():
                 print("Passwords do not match. Please try again")
         
 
-        print("exiting account creation, line 87")
 
     def check_password(self, password):
         """Checks users password for necessary requirments
@@ -151,7 +150,6 @@ class acctcreation():
         Side Effects: 
             Updates users money
         """   
-        print("adding money")
         x = list(self.userinfo[user])
         x[2] = x[2] + money
         y = tuple(x)
@@ -167,9 +165,11 @@ class acctcreation():
             Updates users money
 `       """
 
-        print("subtracting money")
         x = list(self.userinfo[user])
-        print("Check if sufficient funds, line 127")
+        if(x[2]< money):
+            print("You don't have enough funds. Exiting...")
+            exit()
+
         x[2] = x[2] - money
         y = tuple(x)
         self.userinfo[user] = x

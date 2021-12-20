@@ -13,9 +13,9 @@ def clear():
 
 
 def main():
-    print("starting up...")
-  #  time.sleep(1)
-  #  clear()
+    print("Starting up...")
+    time.sleep(1)
+    clear()
 
     accounts = acctcreation("bankdatabase.csv")
     gui(accounts)
@@ -23,7 +23,7 @@ def main():
 
 
 def gui(database):
-    print("welcome! What would you like to do:")
+    print("Welcome! What would you like to do:")
     a = True
     while(a):
         print("1. Log in")
@@ -31,13 +31,11 @@ def gui(database):
         print("3. Exit")
         selection = input("")
 
-        #time.sleep(1)
-        #clear()
+        time.sleep(1)
+        clear()
         
         if(selection == "1"):
             a = False
-            print("TODO line 39")
-            #TODO make login stuff
             user = database.login()
             if not user:
                 a = True
@@ -55,13 +53,14 @@ def gui(database):
 
         else:
             print("Input not recognized, try again.")
-            
 
-    print("ending. delete this line 59")
+    print("Have a nice day!")            
 
-#TODO finish this
+    
+
+
 def logged_in(database, user):
-    #clear()
+    clear()
     print(f"Welcome {user}!")
     print("1. Deposite money")
     print("2. Withdraw money")
@@ -69,21 +68,26 @@ def logged_in(database, user):
     selection = input("")
     while valid == False:
         if selection == "1":
+            clear()
             valid = True
             money = input("How much are you depositing: $")
             money = int(money)
 
             database.add_money(user, money)
             print("Saving data...")
+            time.sleep(1)
             database.export()
             print("Thank you for working with Elephant Banking!")
+            exit()
         elif selection == "2":
+            clear()
             valid = True
             money = input("How much are you withdrawing: $")
             money = int(money)
             database.take_money(user, money)
 
             print("Saving data...")
+            time.sleep(1)
             database.export()
             print("Thank you for working with Elephant Banking!")
             exit()
