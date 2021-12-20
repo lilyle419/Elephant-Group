@@ -68,18 +68,31 @@ def logged_in(database, user):
     valid = False
     selection = input("")
     while valid == False:
-        if selection == 1:
+        if selection == "1":
             valid = True
-            database.add_money(user)
-        elif selection == 2:
+            money = input("How much are you depositing: $")
+            money = int(money)
+
+            database.add_money(user, money)
+            print("Saving data...")
+            database.export()
+            print("Thank you for working with Elephant Banking!")
+        elif selection == "2":
             valid = True
-            database.take_money(user)
+            money = input("How much are you withdrawing: $")
+            money = int(money)
+            database.take_money(user, money)
+
+            print("Saving data...")
+            database.export()
+            print("Thank you for working with Elephant Banking!")
+            exit()
+
         else:
             print("Select a valid response")
+            selection = input("")
 
    
-
-
 
 if __name__ == "__main__":
     main()

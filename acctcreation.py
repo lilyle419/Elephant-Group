@@ -165,10 +165,8 @@ class acctcreation():
             money(int): The amount they want to withdraw
         Side Effects: 
             Updates users money
+`       """
 
-
-
-"""
         print("subtracting money")
         x = list(self.userinfo[user])
         print("Check if sufficient funds, line 127")
@@ -245,9 +243,6 @@ class acctcreation():
         
 
         #clear() need to get function lol
-
-
-
 
 
 
