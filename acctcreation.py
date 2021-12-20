@@ -40,7 +40,7 @@ class acctcreation():
     
     
     def create_acct(self):
-        """Allows users to create their bank account
+        """Allows users to create a sufficient bank account
 
             Side effects:
                 adds a new account to the database
