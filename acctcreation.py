@@ -40,7 +40,7 @@ class acctcreation():
     
     
     def create_acct(self):
-        """Allows users to create their bank account
+        """Allows users to create a sufficient bank account
 
             Side effects:
                 adds a new account to the database
@@ -249,13 +249,12 @@ class acctcreation():
         print("export finished!")
 
 
-# password
 
 def lettersgen():
-    """Helper function for adding character
+    """Helper function for adding characters to the password
 
         Returns:
-            letterlist(string): adds leters
+            letterlist(string): adds letters
 
 """
     lettersList = []
@@ -266,7 +265,7 @@ def lettersgen():
     return lettersList
 
 def numbersgen():
-    """Helper function for adding character
+    """Helper function for adding numbers to the password
 
         Returns:
             numlist(string): adds numbers
@@ -280,10 +279,10 @@ def numbersgen():
     return numList
 
 def symGen():
-    """Helper function for adding character
+    """Helper function for adding symbols to the passwords
 
         Returns:
-            symlist(string): adds characters
+            symlist(string): adds symbols
 
 """
     symList = []

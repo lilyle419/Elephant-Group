@@ -76,7 +76,7 @@ def logged_in(database, user):
     """ The text based user interface for when the user is logged in
 
     Args:
-        database (acctcreation): the current bank database.
+        database(acctcreation): the current bank database.
         user(String): the user's username
     
     
